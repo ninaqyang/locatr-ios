@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		27CAE6E51C87A5B800C66B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */; };
-		27CAE6E71C87A5B800C66B60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE6E61C87A5B800C66B60 /* ViewController.swift */; };
-		27CAE6EA1C87A5B800C66B60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE6E81C87A5B800C66B60 /* Main.storyboard */; };
+		27CAE6E71C87A5B800C66B60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */; };
 		27CAE6EC1C87A5B800C66B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE6EB1C87A5B800C66B60 /* Assets.xcassets */; };
-		27CAE6EF1C87A5B800C66B60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE6ED1C87A5B800C66B60 /* LaunchScreen.storyboard */; };
 		27CAE6FA1C87A5B800C66B60 /* LocatrSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE6F91C87A5B800C66B60 /* LocatrSwiftTests.swift */; };
 		27CAE7051C87A5B800C66B60 /* LocatrSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE7041C87A5B800C66B60 /* LocatrSwiftUITests.swift */; };
+		27CAE7151C87C23B00C66B60 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE7141C87C23B00C66B60 /* LaunchScreen.xib */; };
+		27CAE7171C87D47B00C66B60 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE7161C87D47B00C66B60 /* LoginViewController.xib */; };
+		27CAE71E1C87D98200C66B60 /* Calibri Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE7181C87D6F200C66B60 /* Calibri Bold Italic.ttf */; };
+		27CAE71F1C87D98400C66B60 /* Calibri Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE7191C87D6F200C66B60 /* Calibri Bold.ttf */; };
+		27CAE7201C87D98700C66B60 /* Calibri Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE71A1C87D6F200C66B60 /* Calibri Italic.ttf */; };
+		27CAE7211C87D98900C66B60 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE71B1C87D6F200C66B60 /* Calibri.ttf */; };
+		27CAE7221C87D98C00C66B60 /* Fabrica.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE71D1C87D72F00C66B60 /* Fabrica.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +41,8 @@
 /* Begin PBXFileReference section */
 		27CAE6E11C87A5B800C66B60 /* LocatrSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocatrSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27CAE6E61C87A5B800C66B60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		27CAE6E91C87A5B800C66B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		27CAE6EB1C87A5B800C66B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		27CAE6EE1C87A5B800C66B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27CAE6F01C87A5B800C66B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27CAE6F51C87A5B800C66B60 /* LocatrSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocatrSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAE6F91C87A5B800C66B60 /* LocatrSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatrSwiftTests.swift; sourceTree = "<group>"; };
@@ -47,6 +50,13 @@
 		27CAE7001C87A5B800C66B60 /* LocatrSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocatrSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAE7041C87A5B800C66B60 /* LocatrSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatrSwiftUITests.swift; sourceTree = "<group>"; };
 		27CAE7061C87A5B800C66B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27CAE7141C87C23B00C66B60 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		27CAE7161C87D47B00C66B60 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		27CAE7181C87D6F200C66B60 /* Calibri Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold Italic.ttf"; sourceTree = "<group>"; };
+		27CAE7191C87D6F200C66B60 /* Calibri Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold.ttf"; sourceTree = "<group>"; };
+		27CAE71A1C87D6F200C66B60 /* Calibri Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Italic.ttf"; sourceTree = "<group>"; };
+		27CAE71B1C87D6F200C66B60 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
+		27CAE71D1C87D72F00C66B60 /* Fabrica.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fabrica.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,7 @@
 				27CAE6F81C87A5B800C66B60 /* LocatrSwiftTests */,
 				27CAE7031C87A5B800C66B60 /* LocatrSwiftUITests */,
 				27CAE6E21C87A5B800C66B60 /* Products */,
+				27CAE71C1C87D6FE00C66B60 /* Fonts */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,10 +109,10 @@
 			isa = PBXGroup;
 			children = (
 				27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */,
-				27CAE6E61C87A5B800C66B60 /* ViewController.swift */,
-				27CAE6E81C87A5B800C66B60 /* Main.storyboard */,
+				27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */,
+				27CAE7161C87D47B00C66B60 /* LoginViewController.xib */,
+				27CAE7141C87C23B00C66B60 /* LaunchScreen.xib */,
 				27CAE6EB1C87A5B800C66B60 /* Assets.xcassets */,
-				27CAE6ED1C87A5B800C66B60 /* LaunchScreen.storyboard */,
 				27CAE6F01C87A5B800C66B60 /* Info.plist */,
 			);
 			path = LocatrSwift;
@@ -123,6 +134,18 @@
 				27CAE7061C87A5B800C66B60 /* Info.plist */,
 			);
 			path = LocatrSwiftUITests;
+			sourceTree = "<group>";
+		};
+		27CAE71C1C87D6FE00C66B60 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				27CAE7181C87D6F200C66B60 /* Calibri Bold Italic.ttf */,
+				27CAE7191C87D6F200C66B60 /* Calibri Bold.ttf */,
+				27CAE71A1C87D6F200C66B60 /* Calibri Italic.ttf */,
+				27CAE71B1C87D6F200C66B60 /* Calibri.ttf */,
+				27CAE71D1C87D72F00C66B60 /* Fabrica.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +255,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27CAE6EF1C87A5B800C66B60 /* LaunchScreen.storyboard in Resources */,
+				27CAE7201C87D98700C66B60 /* Calibri Italic.ttf in Resources */,
+				27CAE71E1C87D98200C66B60 /* Calibri Bold Italic.ttf in Resources */,
+				27CAE7221C87D98C00C66B60 /* Fabrica.otf in Resources */,
+				27CAE7171C87D47B00C66B60 /* LoginViewController.xib in Resources */,
+				27CAE7151C87C23B00C66B60 /* LaunchScreen.xib in Resources */,
+				27CAE7211C87D98900C66B60 /* Calibri.ttf in Resources */,
 				27CAE6EC1C87A5B800C66B60 /* Assets.xcassets in Resources */,
-				27CAE6EA1C87A5B800C66B60 /* Main.storyboard in Resources */,
+				27CAE71F1C87D98400C66B60 /* Calibri Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27CAE6E71C87A5B800C66B60 /* ViewController.swift in Sources */,
+				27CAE6E71C87A5B800C66B60 /* LoginViewController.swift in Sources */,
 				27CAE6E51C87A5B800C66B60 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,25 +322,6 @@
 			targetProxy = 27CAE7011C87A5B800C66B60 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		27CAE6E81C87A5B800C66B60 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27CAE6E91C87A5B800C66B60 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		27CAE6ED1C87A5B800C66B60 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27CAE6EE1C87A5B800C66B60 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		27CAE7071C87A5B800C66B60 /* Debug */ = {
@@ -351,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -389,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -401,6 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LocatrSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Nina-Yang.LocatrSwift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,6 +422,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LocatrSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Nina-Yang.LocatrSwift";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -12,10 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var navController: UINavigationController?
+    var loginVC: LoginViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.loginVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        self.window?.rootViewController = self.loginVC
+        self.window?.makeKeyAndVisible()
         return true
     }
 
