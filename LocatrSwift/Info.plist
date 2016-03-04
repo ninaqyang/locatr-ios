@@ -30,7 +30,10 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Fabrica.otf</string>
-		<string></string>
+		<string>Calibri.ttf</string>
+		<string>Calibri Bold.ttf</string>
+		<string>Calibri Italic.ttf</string>
+		<string>Calibri Bold Italic.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

@@ -15,9 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navController: UINavigationController?
     var loginVC: LoginViewController?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
-        
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.loginVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
         self.window?.rootViewController = self.loginVC

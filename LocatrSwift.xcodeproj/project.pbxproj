@@ -19,6 +19,7 @@
 		27CAE7201C87D98700C66B60 /* Calibri Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE71A1C87D6F200C66B60 /* Calibri Italic.ttf */; };
 		27CAE7211C87D98900C66B60 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE71B1C87D6F200C66B60 /* Calibri.ttf */; };
 		27CAE7221C87D98C00C66B60 /* Fabrica.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE71D1C87D72F00C66B60 /* Fabrica.otf */; };
+		27CAE7241C88BD7800C66B60 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE7231C88BD7700C66B60 /* CustomColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		27CAE71A1C87D6F200C66B60 /* Calibri Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Italic.ttf"; sourceTree = "<group>"; };
 		27CAE71B1C87D6F200C66B60 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
 		27CAE71D1C87D72F00C66B60 /* Fabrica.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fabrica.otf; sourceTree = "<group>"; };
+		27CAE7231C88BD7700C66B60 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */,
+				27CAE7231C88BD7700C66B60 /* CustomColors.swift */,
 				27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */,
 				27CAE7161C87D47B00C66B60 /* LoginViewController.xib */,
 				27CAE7141C87C23B00C66B60 /* LaunchScreen.xib */,
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27CAE7241C88BD7800C66B60 /* CustomColors.swift in Sources */,
 				27CAE6E71C87A5B800C66B60 /* LoginViewController.swift in Sources */,
 				27CAE6E51C87A5B800C66B60 /* AppDelegate.swift in Sources */,
 			);
