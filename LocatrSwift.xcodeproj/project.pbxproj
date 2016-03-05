@@ -20,6 +20,9 @@
 		27CAE7211C87D98900C66B60 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE71B1C87D6F200C66B60 /* Calibri.ttf */; };
 		27CAE7221C87D98C00C66B60 /* Fabrica.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE71D1C87D72F00C66B60 /* Fabrica.otf */; };
 		27CAE7241C88BD7800C66B60 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE7231C88BD7700C66B60 /* CustomColors.swift */; };
+		AF7B895ACA05AE613F3BEB09 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08FB27FB2CF6F341ABB77BA /* Pods.framework */; };
+		ED1852691C8A7CA40066DA1E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1852681C8A7CA40066DA1E /* UserService.swift */; };
+		ED18526C1C8A83900066DA1E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18526B1C8A83900066DA1E /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23D6593226ED11C2EA795496 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		27CAE6E11C87A5B800C66B60 /* LocatrSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocatrSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,14 @@
 		27CAE71B1C87D6F200C66B60 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
 		27CAE71D1C87D72F00C66B60 /* Fabrica.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fabrica.otf; sourceTree = "<group>"; };
 		27CAE7231C88BD7700C66B60 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		B08FB27FB2CF6F341ABB77BA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2379D2BBDCC93C6827DCFA8 /* Pods_LocatrSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocatrSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED1852611C8A78080066DA1E /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Alamofire; path = Pods/Alamofire; sourceTree = "<group>"; };
+		ED1852631C8A782E0066DA1E /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
+		ED1852651C8A78C10066DA1E /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Pods/Alamofire/Source/Alamofire.swift; sourceTree = "<group>"; };
+		ED1852681C8A7CA40066DA1E /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		ED18526B1C8A83900066DA1E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F5EF4B42B2261B6DDE7DFB96 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF7B895ACA05AE613F3BEB09 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +107,8 @@
 				27CAE7031C87A5B800C66B60 /* LocatrSwiftUITests */,
 				27CAE6E21C87A5B800C66B60 /* Products */,
 				27CAE71C1C87D6FE00C66B60 /* Fonts */,
+				394074281AA3E483E29A2E40 /* Pods */,
+				E9F4D8B46EF38B39B027EC9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +125,8 @@
 		27CAE6E31C87A5B800C66B60 /* LocatrSwift */ = {
 			isa = PBXGroup;
 			children = (
+				ED18526A1C8A83830066DA1E /* models */,
+				ED1852671C8A7C570066DA1E /* services */,
 				27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */,
 				27CAE7231C88BD7700C66B60 /* CustomColors.swift */,
 				27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */,
@@ -151,6 +168,43 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		394074281AA3E483E29A2E40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23D6593226ED11C2EA795496 /* Pods.debug.xcconfig */,
+				F5EF4B42B2261B6DDE7DFB96 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E9F4D8B46EF38B39B027EC9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED1852651C8A78C10066DA1E /* Alamofire.swift */,
+				ED1852631C8A782E0066DA1E /* Pods */,
+				ED1852611C8A78080066DA1E /* Alamofire */,
+				B08FB27FB2CF6F341ABB77BA /* Pods.framework */,
+				B2379D2BBDCC93C6827DCFA8 /* Pods_LocatrSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED1852671C8A7C570066DA1E /* services */ = {
+			isa = PBXGroup;
+			children = (
+				ED1852681C8A7CA40066DA1E /* UserService.swift */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
+		ED18526A1C8A83830066DA1E /* models */ = {
+			isa = PBXGroup;
+			children = (
+				ED18526B1C8A83900066DA1E /* User.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,9 +212,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27CAE7091C87A5B800C66B60 /* Build configuration list for PBXNativeTarget "LocatrSwift" */;
 			buildPhases = (
+				0C0AD38C4DB1629F2DDDF814 /* Check Pods Manifest.lock */,
 				27CAE6DD1C87A5B800C66B60 /* Sources */,
 				27CAE6DE1C87A5B800C66B60 /* Frameworks */,
 				27CAE6DF1C87A5B800C66B60 /* Resources */,
+				AF56D6103964AFD0A642EBCC /* Embed Pods Frameworks */,
+				810C0159F1E31ADAB30C976F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,13 +342,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C0AD38C4DB1629F2DDDF814 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		810C0159F1E31ADAB30C976F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF56D6103964AFD0A642EBCC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		27CAE6DD1C87A5B800C66B60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				27CAE7241C88BD7800C66B60 /* CustomColors.swift in Sources */,
+				ED1852691C8A7CA40066DA1E /* UserService.swift in Sources */,
 				27CAE6E71C87A5B800C66B60 /* LoginViewController.swift in Sources */,
+				ED18526C1C8A83900066DA1E /* User.swift in Sources */,
 				27CAE6E51C87A5B800C66B60 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +518,7 @@
 		};
 		27CAE70A1C87A5B800C66B60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23D6593226ED11C2EA795496 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LocatrSwift/Info.plist;
@@ -423,6 +531,7 @@
 		};
 		27CAE70B1C87A5B800C66B60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5EF4B42B2261B6DDE7DFB96 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LocatrSwift/Info.plist;
@@ -500,6 +609,7 @@
 				27CAE70B1C87A5B800C66B60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27CAE70C1C87A5B800C66B60 /* Build configuration list for PBXNativeTarget "LocatrSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +618,7 @@
 				27CAE70E1C87A5B800C66B60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27CAE70F1C87A5B800C66B60 /* Build configuration list for PBXNativeTarget "LocatrSwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +627,7 @@
 				27CAE7111C87A5B800C66B60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
