@@ -17,19 +17,20 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var appName: UILabel!
     @IBOutlet weak var appDescription: UITextView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var phoneTextbox: UITextField!
-    @IBOutlet weak var nameTextbox: UITextField!
-    @IBOutlet weak var passwordTextbox: UITextField!
-    @IBOutlet weak var signupButton: UIButton!
-    @IBOutlet weak var facebookSignupButton: UIButton!
+    
     @IBOutlet var signupView: UIView!
     @IBOutlet var loginView: UIView!
+    @IBOutlet weak var signupPhone: UITextField!
+    @IBOutlet weak var signupPassword: UITextField!
+    @IBOutlet weak var signupName: UITextField!
+    @IBOutlet weak var loginPassword: UITextField!
+    @IBOutlet weak var loginName: UITextField!
 
     // MARK: View
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.appDetails()
         self.segmentedControl.customBorder()
         self.segmentedControl.textStyle(self.customColors.mediumGrey, selectedColor: self.customColors.darkPurple)
@@ -40,9 +41,9 @@ class LoginViewController: UIViewController {
 //            print("Custom colors aren't set")
 //        }
         
-        self.textBoxes()
-        self.signupViewCreate()
         self.loginViewCreate()
+        self.signupViewCreate()
+        self.signupView.hidden = true
     }
     
     // MARK: Styling
@@ -57,34 +58,49 @@ class LoginViewController: UIViewController {
         self.appDescription.font = UIFont(name: "Calibri", size: 16)
     }
     
-    func textBoxes() {
-        self.phoneTextbox.customFont("Phone Number", placeholderColor: self.customColors.unselectedTextGrey)
-        self.nameTextbox.customFont("Name", placeholderColor: self.customColors.unselectedTextGrey)
-        self.passwordTextbox.customFont("Password", placeholderColor: self.customColors.unselectedTextGrey)
-
-    }
-    
     // MARK: Login/Signup
     
     func signupViewCreate() {
         self.view.addSubview(self.signupView)
-        //create constraints
+        
+        // Autolayout
+        self.signupView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: self.signupView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 320).active = true
+        NSLayoutConstraint(item: self.signupView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 267).active = true
+        NSLayoutConstraint(item: self.signupView, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0).active = true
+        NSLayoutConstraint(item: self.signupView, attribute: .CenterY, relatedBy: .Equal, toItem: self.segmentedControl, attribute: .CenterY, multiplier: 1, constant: 152).active = true
+        
+        // Textboxes
+        self.signupPhone.customFont("Phone Number", placeholderColor: self.customColors.unselectedTextGrey)
+        self.signupName.customFont("Name", placeholderColor: self.customColors.unselectedTextGrey)
+        self.signupPassword.customFont("Password", placeholderColor: self.customColors.unselectedTextGrey)
     }
     
     func loginViewCreate() {
         self.view.addSubview(self.loginView)
-        //create constraints
+       
+        // Autolayout
+        self.loginView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: self.loginView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 320).active = true
+        NSLayoutConstraint(item: self.loginView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 232).active = true
+        NSLayoutConstraint(item: self.loginView, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0).active = true
+        NSLayoutConstraint(item: self.loginView, attribute: .CenterY, relatedBy: .Equal, toItem: self.segmentedControl, attribute: .CenterY, multiplier: 1, constant: 130).active = true
+        
+        // Textboxes
+        self.loginName.customFont("Name", placeholderColor: self.customColors.unselectedTextGrey)
+        self.loginPassword.customFont("Password", placeholderColor: self.customColors.unselectedTextGrey)
     }
     
     @IBAction func indexChanged(sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0: // Login
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animateWithDuration(0.3, animations: {
                 self.signupView.alpha = 0
                 self.loginView.alpha = 1
             })
         case 1: // Sign Up
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animateWithDuration(0.3, animations: {
+                self.signupView.hidden = false
                 self.signupView.alpha = 1
                 self.loginView.alpha = 0
             })

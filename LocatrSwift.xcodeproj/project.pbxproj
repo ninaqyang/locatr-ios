@@ -125,8 +125,8 @@
 		27CAE6E31C87A5B800C66B60 /* LocatrSwift */ = {
 			isa = PBXGroup;
 			children = (
-				ED18526A1C8A83830066DA1E /* models */,
-				ED1852671C8A7C570066DA1E /* services */,
+				ED18526A1C8A83830066DA1E /* Models */,
+				ED1852671C8A7C570066DA1E /* Services */,
 				27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */,
 				27CAE7231C88BD7700C66B60 /* CustomColors.swift */,
 				27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */,
@@ -189,20 +189,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		ED1852671C8A7C570066DA1E /* services */ = {
+		ED1852671C8A7C570066DA1E /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				ED1852681C8A7CA40066DA1E /* UserService.swift */,
 			);
-			name = services;
+			name = Services;
 			sourceTree = "<group>";
 		};
-		ED18526A1C8A83830066DA1E /* models */ = {
+		ED18526A1C8A83830066DA1E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				ED18526B1C8A83900066DA1E /* User.swift */,
 			);
-			name = models;
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
