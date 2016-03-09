@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import ObjectMapper
 
 // MARK: - Classes
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UserServiceDelegate {
     
-    var customColors: CustomColors! = CustomColors.init()
+    let customColors: CustomColors = CustomColors.init()
+    let userService: UserService = UserService.init()
+    var user: [String: String] = [:]
+    let facebookReadPermissions: [String] = ["public_profile", "email"]
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     @IBOutlet weak var appName: UILabel!
     @IBOutlet weak var appDescription: UITextView!
@@ -20,26 +26,21 @@ class LoginViewController: UIViewController {
     
     @IBOutlet var signupView: UIView!
     @IBOutlet var loginView: UIView!
-    @IBOutlet weak var signupPhone: UITextField!
+    @IBOutlet weak var signupEmail: UITextField!
     @IBOutlet weak var signupPassword: UITextField!
     @IBOutlet weak var signupName: UITextField!
+    @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
-    @IBOutlet weak var loginName: UITextField!
 
     // MARK: View
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.userService.delegate = self
+        
         self.appDetails()
         self.segmentedControl.customBorder()
         self.segmentedControl.textStyle(self.customColors.mediumGrey, selectedColor: self.customColors.darkPurple)
-        
-//        if let customColors = self.customColors {
-//            self.segmentedControl.textStyle(customColors.mediumGrey, selectedColor: customColors.darkPurple)
-//        } else {
-//            print("Custom colors aren't set")
-//        }
         
         self.loginViewCreate()
         self.signupViewCreate()
@@ -58,7 +59,7 @@ class LoginViewController: UIViewController {
         self.appDescription.font = UIFont(name: "Calibri", size: 16)
     }
     
-    // MARK: Login/Signup
+    // MARK: Login/Signup Layout
     
     func signupViewCreate() {
         self.view.addSubview(self.signupView)
@@ -71,7 +72,7 @@ class LoginViewController: UIViewController {
         NSLayoutConstraint(item: self.signupView, attribute: .CenterY, relatedBy: .Equal, toItem: self.segmentedControl, attribute: .CenterY, multiplier: 1, constant: 152).active = true
         
         // Textboxes
-        self.signupPhone.customFont("Phone Number", placeholderColor: self.customColors.unselectedTextGrey)
+        self.signupEmail.customFont("Email", placeholderColor: self.customColors.unselectedTextGrey)
         self.signupName.customFont("Name", placeholderColor: self.customColors.unselectedTextGrey)
         self.signupPassword.customFont("Password", placeholderColor: self.customColors.unselectedTextGrey)
     }
@@ -87,7 +88,7 @@ class LoginViewController: UIViewController {
         NSLayoutConstraint(item: self.loginView, attribute: .CenterY, relatedBy: .Equal, toItem: self.segmentedControl, attribute: .CenterY, multiplier: 1, constant: 130).active = true
         
         // Textboxes
-        self.loginName.customFont("Name", placeholderColor: self.customColors.unselectedTextGrey)
+        self.loginEmail.customFont("Name", placeholderColor: self.customColors.unselectedTextGrey)
         self.loginPassword.customFont("Password", placeholderColor: self.customColors.unselectedTextGrey)
     }
     
@@ -108,7 +109,126 @@ class LoginViewController: UIViewController {
             break; 
         }
     }
+    
+    // MARK: Email Login/Signup
 
+    @IBAction func emailSignup(sender: AnyObject) {
+        // should also check if email is proper format
+        guard let userEmail = self.signupEmail.text, userName = self.signupName.text, userPassword = self.signupPassword.text
+            where !userEmail.isEmpty && !userName.isEmpty && !userPassword.isEmpty else {
+                textfieldError()
+                return
+        }
+        self.user = ["email": userEmail, "name": userName, "password": userPassword]
+        print(self.user)
+        self.userService.createUser(self.user)
+    }
+    
+    @IBAction func emailLogin(sender: AnyObject) {
+        // should also check if email is proper format
+        guard let userEmail = self.loginEmail.text, userPassword = self.loginPassword.text
+            where !userEmail.isEmpty && !userPassword.isEmpty else {
+                textfieldError()
+                return
+        }
+        self.user = ["email": userEmail, "password": userPassword]
+        print(self.user)
+//        self.userService.getUsers { (self.user) -> () in
+//            //
+//        }
+    }
+    
+    func textfieldError() {
+        print("One of the text fields is empty, not allowed")
+        let alertView = UIAlertController(title: "No text fields can be empty", message: "Please fill out every field", preferredStyle: .Alert)
+        alertView.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        presentViewController(alertView, animated: true, completion: nil)
+    }
+    
+    // MARK: Facebook Login/Signup
+    
+    @IBAction func fbSignup(sender: AnyObject) {
+        FBSDKLoginManager().logInWithReadPermissions(self.facebookReadPermissions, fromViewController: self, handler: { (result:FBSDKLoginManagerLoginResult!, error:NSError!) -> Void in
+            if (error != nil) {
+                // Process error
+                self.removeFbData()
+            } else if result.isCancelled {
+                // User Cancellation
+                self.removeFbData()
+            } else {
+                //Success
+                // If you ask for multiple permissions at once, you should check if specific permissions missing
+                var allPermsGranted = true
+                
+                //result.grantedPermissions returns an array of _NSCFString pointers
+                let grantedPermissions = Array(result.grantedPermissions).map( {"\($0)"} )
+                
+                for permission in self.facebookReadPermissions {
+                    if !grantedPermissions.contains(permission) {
+                        allPermsGranted = false
+                        break
+                    }
+                }
+                if allPermsGranted {
+                    let fbToken = result.token.tokenString
+                    let fbUserID = result.token.userID
+                    self.user = ["fbUserID": fbUserID, "fbTokenString": fbToken]
+                    
+                    self.userService.createUser(self.user)
+                } else {
+                    //Handle error
+                }
+            }
+        })
+    }
+    
+    func removeFbData() {
+        //Remove FB Data
+        let fbManager = FBSDKLoginManager()
+        fbManager.logOut()
+        FBSDKAccessToken.setCurrentAccessToken(nil)
+    }
+    
+    @IBAction func fbLogin(sender: AnyObject) {
+        // before user service calls implemented, move to next view controller
+        let overviewVC = OverviewViewController(nibName: "OverviewViewController", bundle: nil)
+        let navController = UINavigationController(rootViewController: overviewVC)
+        self.presentViewController(navController, animated: true, completion: nil)
+    }
+    
+    // MARK: API Callback
+    
+    func signupComplete() {
+        // parameters get user back as response, store in user
+        
+        if defaults.boolForKey("Success") {
+            defaults.setBool(true, forKey: "isUserLoggedIn")
+            let overviewVC = OverviewViewController(nibName: "OverviewViewController", bundle: nil)
+            let navController = UINavigationController(rootViewController: overviewVC)
+            self.presentViewController(navController, animated: true, completion: nil)
+        } else {
+            print("Signup not successful")
+        }
+    }
+    
+    func fbSignupComplete() {
+        if defaults.boolForKey("Success") {
+            // parameters get user back as response, store in user
+
+            if FBSDKAccessToken.currentAccessToken() != nil {
+                defaults.setBool(true, forKey: "isUserLoggedIn")
+                // User is already logged in, do work such as go to next view controller.
+                //            //For debugging, when we want to ensure that facebook login always happens
+                //            FBSDKLoginManager().logOut()
+                //            //Otherwise do:
+                //            return
+            } else {
+                print("User not logged in through fb")
+            }
+        } else {
+            print("Signup not successful")
+        }
+    }
 }
 
 // MARK: - Extensions

@@ -23,5 +23,5 @@ class CustomColors: NSObject {
     
     // Pink
     let pink = UIColor(red: 255/255, green: 61/255, blue: 114/255, alpha: 1.0)
-    
+
 }

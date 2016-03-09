@@ -9,13 +9,13 @@
             <connections>
                 <outlet property="appDescription" destination="gax-6z-XnU" id="lOm-G6-Nor"/>
                 <outlet property="appName" destination="mYb-mc-sIK" id="b5o-lN-XF9"/>
-                <outlet property="loginName" destination="nHS-rg-1cQ" id="jdj-VV-S9h"/>
+                <outlet property="loginEmail" destination="nHS-rg-1cQ" id="chK-6W-wFz"/>
                 <outlet property="loginPassword" destination="fZE-ua-IWZ" id="fLV-85-nvX"/>
                 <outlet property="loginView" destination="Z1e-l9-gGp" id="C2R-Qc-8K6"/>
                 <outlet property="segmentedControl" destination="Qey-qK-wWX" id="Tf5-rh-AWF"/>
+                <outlet property="signupEmail" destination="Tq9-8m-ECs" id="78g-kE-xOS"/>
                 <outlet property="signupName" destination="wMR-Zi-6NI" id="Es5-Vo-dmU"/>
                 <outlet property="signupPassword" destination="YLw-Ei-ih7" id="DQQ-x1-R0K"/>
-                <outlet property="signupPhone" destination="Tq9-8m-ECs" id="0eo-3N-Qvp"/>
                 <outlet property="signupView" destination="AOY-Zo-aj0" id="WyL-ox-JjE"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Enn-dO-z04"/>
             </connections>
@@ -151,7 +151,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="267"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tq9-8m-ECs">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tq9-8m-ECs">
                     <rect key="frame" x="21" y="20" width="276" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -164,15 +164,21 @@
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YLw-Ei-ih7">
                     <rect key="frame" x="21" y="100" width="276" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hu7-BP-eV3">
                     <rect key="frame" x="104" y="150" width="113" height="36"/>
                     <state key="normal" image="signup-button"/>
+                    <connections>
+                        <action selector="emailSignup:" destination="-1" eventType="touchUpInside" id="2Mx-2t-AcL"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxD-bA-3bc">
                     <rect key="frame" x="58" y="201" width="204" height="36"/>
                     <state key="normal" image="signup-fb-button"/>
+                    <connections>
+                        <action selector="fbSignup:" destination="-1" eventType="touchUpInside" id="CD5-yv-uMa"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -183,7 +189,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="232"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nHS-rg-1cQ">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nHS-rg-1cQ">
                     <rect key="frame" x="21" y="25" width="276" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -191,15 +197,21 @@
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZE-ua-IWZ">
                     <rect key="frame" x="21" y="65" width="276" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7L-GU-14w">
                     <rect key="frame" x="105" y="115" width="113" height="36"/>
                     <state key="normal" image="login-button"/>
+                    <connections>
+                        <action selector="emailLogin:" destination="-1" eventType="touchUpInside" id="lun-Ai-XIF"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYQ-iT-6Eq">
                     <rect key="frame" x="60" y="166" width="204" height="36"/>
                     <state key="normal" image="login-fb-button"/>
+                    <connections>
+                        <action selector="fbLogin:" destination="-1" eventType="touchUpInside" id="hkX-gJ-6VV"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

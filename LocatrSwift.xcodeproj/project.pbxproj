@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2784EC341C8F906D009C1604 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784EC331C8F906D009C1604 /* CustomNavBar.swift */; };
+		279C67411C8BC1330058EDFD /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C67401C8BC1330058EDFD /* OverviewViewController.swift */; };
+		279C67441C8BC1740058EDFD /* OverviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279C67431C8BC1740058EDFD /* OverviewViewController.xib */; };
 		27CAE6E51C87A5B800C66B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */; };
 		27CAE6E71C87A5B800C66B60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */; };
 		27CAE6EC1C87A5B800C66B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE6EB1C87A5B800C66B60 /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 
 /* Begin PBXFileReference section */
 		23D6593226ED11C2EA795496 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2784EC331C8F906D009C1604 /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
+		279C67401C8BC1330058EDFD /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		279C67431C8BC1740058EDFD /* OverviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverviewViewController.xib; sourceTree = "<group>"; };
 		27CAE6E11C87A5B800C66B60 /* LocatrSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocatrSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +69,7 @@
 		27CAE71B1C87D6F200C66B60 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
 		27CAE71D1C87D72F00C66B60 /* Fabrica.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fabrica.otf; sourceTree = "<group>"; };
 		27CAE7231C88BD7700C66B60 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		27EF2B6A1C8BCB2700534589 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		B08FB27FB2CF6F341ABB77BA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2379D2BBDCC93C6827DCFA8 /* Pods_LocatrSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocatrSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1852611C8A78080066DA1E /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Alamofire; path = Pods/Alamofire; sourceTree = "<group>"; };
@@ -99,14 +106,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		279C67421C8BC1480058EDFD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */,
+				279C67401C8BC1330058EDFD /* OverviewViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		279C67451C8BC17D0058EDFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27CAE7161C87D47B00C66B60 /* LoginViewController.xib */,
+				279C67431C8BC1740058EDFD /* OverviewViewController.xib */,
+				27CAE7141C87C23B00C66B60 /* LaunchScreen.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		279C67461C8BC1CF0058EDFD /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				27CAE6F81C87A5B800C66B60 /* LocatrSwiftTests */,
+				27CAE7031C87A5B800C66B60 /* LocatrSwiftUITests */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		279C67471C8BC1FA0058EDFD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				27EF2B6A1C8BCB2700534589 /* Bridging-Header.h */,
+				27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		279C67481C8BC2680058EDFD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2784EC331C8F906D009C1604 /* CustomNavBar.swift */,
+				27CAE7231C88BD7700C66B60 /* CustomColors.swift */,
+				27CAE6EB1C87A5B800C66B60 /* Assets.xcassets */,
+				27CAE6F01C87A5B800C66B60 /* Info.plist */,
+				27CAE71C1C87D6FE00C66B60 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		27CAE6D81C87A5B800C66B60 = {
 			isa = PBXGroup;
 			children = (
 				27CAE6E31C87A5B800C66B60 /* LocatrSwift */,
-				27CAE6F81C87A5B800C66B60 /* LocatrSwiftTests */,
-				27CAE7031C87A5B800C66B60 /* LocatrSwiftUITests */,
+				279C67461C8BC1CF0058EDFD /* Tests */,
 				27CAE6E21C87A5B800C66B60 /* Products */,
-				27CAE71C1C87D6FE00C66B60 /* Fonts */,
 				394074281AA3E483E29A2E40 /* Pods */,
 				E9F4D8B46EF38B39B027EC9E /* Frameworks */,
 			);
@@ -125,15 +179,12 @@
 		27CAE6E31C87A5B800C66B60 /* LocatrSwift */ = {
 			isa = PBXGroup;
 			children = (
+				279C67471C8BC1FA0058EDFD /* Application */,
 				ED18526A1C8A83830066DA1E /* Models */,
 				ED1852671C8A7C570066DA1E /* Services */,
-				27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */,
-				27CAE7231C88BD7700C66B60 /* CustomColors.swift */,
-				27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */,
-				27CAE7161C87D47B00C66B60 /* LoginViewController.xib */,
-				27CAE7141C87C23B00C66B60 /* LaunchScreen.xib */,
-				27CAE6EB1C87A5B800C66B60 /* Assets.xcassets */,
-				27CAE6F01C87A5B800C66B60 /* Info.plist */,
+				279C67421C8BC1480058EDFD /* View Controllers */,
+				279C67451C8BC17D0058EDFD /* Views */,
+				279C67481C8BC2680058EDFD /* Resources */,
 			);
 			path = LocatrSwift;
 			sourceTree = "<group>";
@@ -165,7 +216,8 @@
 				27CAE71B1C87D6F200C66B60 /* Calibri.ttf */,
 				27CAE71D1C87D72F00C66B60 /* Fabrica.otf */,
 			);
-			path = Fonts;
+			name = Fonts;
+			path = ../Fonts;
 			sourceTree = "<group>";
 		};
 		394074281AA3E483E29A2E40 /* Pods */ = {
@@ -323,6 +375,7 @@
 				27CAE7211C87D98900C66B60 /* Calibri.ttf in Resources */,
 				27CAE6EC1C87A5B800C66B60 /* Assets.xcassets in Resources */,
 				27CAE71F1C87D98400C66B60 /* Calibri Bold.ttf in Resources */,
+				279C67441C8BC1740058EDFD /* OverviewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +453,8 @@
 				27CAE6E71C87A5B800C66B60 /* LoginViewController.swift in Sources */,
 				ED18526C1C8A83900066DA1E /* User.swift in Sources */,
 				27CAE6E51C87A5B800C66B60 /* AppDelegate.swift in Sources */,
+				279C67411C8BC1330058EDFD /* OverviewViewController.swift in Sources */,
+				2784EC341C8F906D009C1604 /* CustomNavBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +581,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Nina-Yang.LocatrSwift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LocatrSwift/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -539,6 +595,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Nina-Yang.LocatrSwift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LocatrSwift/Bridging-Header.h";
 			};
 			name = Release;
 		};
