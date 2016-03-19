@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OverviewViewController" customModule="LocatrSwift" customModuleProvider="target">
             <connections>
+                <outlet property="mapView" destination="66u-97-IvS" id="ezZ-Az-uFQ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="enl-hV-6E8"/>
             </connections>
         </placeholder>
@@ -14,7 +15,51 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66u-97-IvS" customClass="MKMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUC-76-Kf2">
+                    <rect key="frame" x="237" y="530" width="125" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="RgV-uP-P1V"/>
+                        <constraint firstAttribute="width" constant="125" id="vHt-c1-pnb"/>
+                    </constraints>
+                    <state key="normal" image="add-event-button"/>
+                    <connections>
+                        <action selector="addEvent:" destination="-1" eventType="touchUpInside" id="sn5-Sp-e6w"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEV-eW-EU3">
+                    <rect key="frame" x="20" y="20" width="32" height="31"/>
+                    <state key="normal" image="alerts"/>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="66u-97-IvS" secondAttribute="bottom" id="71a-ee-5Us"/>
+                <constraint firstAttribute="bottom" secondItem="jUC-76-Kf2" secondAttribute="bottom" constant="20" id="915-BX-7ds"/>
+                <constraint firstItem="66u-97-IvS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JbO-U7-bdN"/>
+                <constraint firstItem="jUC-76-Kf2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Mgo-40-aAF"/>
+                <constraint firstAttribute="trailing" secondItem="AEV-eW-EU3" secondAttribute="trailing" constant="20" id="Rd0-dA-QWm"/>
+                <constraint firstItem="AEV-eW-EU3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Yy5-mO-jC3"/>
+                <constraint firstItem="66u-97-IvS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qQu-QN-EYQ"/>
+                <constraint firstItem="AEV-eW-EU3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="rRu-lp-jS9"/>
+                <constraint firstAttribute="trailing" secondItem="66u-97-IvS" secondAttribute="trailing" id="zgH-Ct-fiJ"/>
+                <constraint firstItem="AEV-eW-EU3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="zzW-AX-AMu"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Rd0-dA-QWm"/>
+                    <exclude reference="Yy5-mO-jC3"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="551" y="381"/>
         </view>
     </objects>
+    <resources>
+        <image name="add-event-button" width="125" height="50"/>
+        <image name="alerts" width="32" height="31"/>
+    </resources>
 </document>

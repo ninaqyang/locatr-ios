@@ -10,6 +10,7 @@ pod 'AlamofireObjectMapper', '~> 2.1'
 pod 'FBSDKLoginKit', '~> 4.10'
 pod 'FBSDKShareKit', '~> 4.10'
 pod 'FBSDKCoreKit', '~> 4.10'
+pod 'GoogleMaps'
 
 target 'LocatrSwift' do
 end

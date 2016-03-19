@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class User : Mappable {
+class User: Mappable {
     var email: String?
     var name: String?
     var password: String?

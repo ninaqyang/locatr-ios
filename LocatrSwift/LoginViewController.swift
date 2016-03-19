@@ -6,11 +6,10 @@
 //  Copyright © 2016 Nina Yang. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import FBSDKLoginKit
 import ObjectMapper
-
-// MARK: - Classes
 
 class LoginViewController: UIViewController, UserServiceDelegate {
     
@@ -32,7 +31,7 @@ class LoginViewController: UIViewController, UserServiceDelegate {
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
 
-    // MARK: View
+    // MARK: - View
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +46,7 @@ class LoginViewController: UIViewController, UserServiceDelegate {
         self.signupView.hidden = true
     }
     
-    // MARK: Styling
+    // MARK: - Styling
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
@@ -59,7 +58,7 @@ class LoginViewController: UIViewController, UserServiceDelegate {
         self.appDescription.font = UIFont(name: "Calibri", size: 16)
     }
     
-    // MARK: Login/Signup Layout
+    // MARK: - Login/Signup Layout
     
     func signupViewCreate() {
         self.view.addSubview(self.signupView)
@@ -110,7 +109,7 @@ class LoginViewController: UIViewController, UserServiceDelegate {
         }
     }
     
-    // MARK: Email Login/Signup
+    // MARK: - Email Login/Signup
 
     @IBAction func emailSignup(sender: AnyObject) {
         // should also check if email is proper format
@@ -145,7 +144,7 @@ class LoginViewController: UIViewController, UserServiceDelegate {
         presentViewController(alertView, animated: true, completion: nil)
     }
     
-    // MARK: Facebook Login/Signup
+    // MARK: - Facebook Login/Signup
     
     @IBAction func fbSignup(sender: AnyObject) {
         FBSDKLoginManager().logInWithReadPermissions(self.facebookReadPermissions, fromViewController: self, handler: { (result:FBSDKLoginManagerLoginResult!, error:NSError!) -> Void in
@@ -191,21 +190,21 @@ class LoginViewController: UIViewController, UserServiceDelegate {
     
     @IBAction func fbLogin(sender: AnyObject) {
         // before user service calls implemented, move to next view controller
-        let overviewVC = OverviewViewController(nibName: "OverviewViewController", bundle: nil)
-        let navController = UINavigationController(rootViewController: overviewVC)
-        self.presentViewController(navController, animated: true, completion: nil)
+        
+        let tabBarController = TabBarController.init()
+        self.presentViewController(tabBarController, animated: true, completion: nil)
     }
     
-    // MARK: API Callback
+    // MARK: - API Callback
     
     func signupComplete() {
         // parameters get user back as response, store in user
         
         if defaults.boolForKey("Success") {
             defaults.setBool(true, forKey: "isUserLoggedIn")
-            let overviewVC = OverviewViewController(nibName: "OverviewViewController", bundle: nil)
-            let navController = UINavigationController(rootViewController: overviewVC)
-            self.presentViewController(navController, animated: true, completion: nil)
+//            let overviewVC = OverviewViewController(nibName: "OverviewViewController", bundle: nil)
+//            let navController = UINavigationController(rootViewController: overviewVC)
+//            self.presentViewController(tabBarController, animated: true, completion: nil)
         } else {
             print("Signup not successful")
         }
@@ -228,44 +227,6 @@ class LoginViewController: UIViewController, UserServiceDelegate {
         } else {
             print("Signup not successful")
         }
-    }
-}
-
-// MARK: - Extensions
-
-extension UISegmentedControl {
-    func customBorder() {
-        setBackgroundImage(UIImage(imageLiteral: "segmented-control"), forState: .Normal, barMetrics: .Default)
-        setBackgroundImage(UIImage(imageLiteral: "segmented-control-selected"), forState: .Selected, barMetrics: .Default)
-        setContentPositionAdjustment(UIOffset(horizontal: 0, vertical: -4), forSegmentType: UISegmentedControlSegment.Any, barMetrics: .Default)
-        setDividerImage(imageWithColor(UIColor.clearColor()), forLeftSegmentState: .Normal, rightSegmentState: .Normal, barMetrics: .Default)
-    }
-    
-    // create a 1x1 image with this color
-    private func imageWithColor(color: UIColor) -> UIImage {
-        let rect = CGRectMake(0.0, 0.0, 1.0, 1.0)
-        UIGraphicsBeginImageContext(rect.size)
-        let context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
-    }
-    
-    func textStyle(normalColor: UIColor, selectedColor:UIColor) {
-        let font = UIFont(name: "Calibri", size: 18)
-        if let font = font {
-            setTitleTextAttributes([NSFontAttributeName: font, NSForegroundColorAttributeName: normalColor], forState: .Normal)
-            setTitleTextAttributes([NSFontAttributeName: font, NSForegroundColorAttributeName: selectedColor], forState: .Selected)
-        }
-    }
-}
-
-extension UITextField {
-    func customFont(placeholderString: String, placeholderColor: UIColor) {
-        font = UIFont(name: "Calibri", size: 14)
-        attributedPlaceholder = NSAttributedString(string: placeholderString, attributes:[NSForegroundColorAttributeName : placeholderColor])
     }
 }
 

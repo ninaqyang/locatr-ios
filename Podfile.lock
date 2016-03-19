@@ -15,7 +15,8 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.10.0):
     - FBSDKCoreKit
-  - Kingfisher (2.0.4)
+  - GoogleMaps (1.12.3)
+  - Kingfisher (2.1.0)
   - ObjectMapper (1.1.5)
   - SwiftyJSON (2.3.2)
 
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - FBSDKCoreKit (~> 4.10)
   - FBSDKLoginKit (~> 4.10)
   - FBSDKShareKit (~> 4.10)
+  - GoogleMaps
   - Kingfisher (~> 2.0)
   - ObjectMapper (~> 1.1)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
@@ -45,7 +47,8 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 13bec8373fb3af94d44daf2aa1e0958687897fbd
   FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
   FBSDKShareKit: 54587b4624706ace1e810cf83412a918141f807a
-  Kingfisher: 8f1ec2c067ade2c549a1a594379b69c4b1ff81ab
+  GoogleMaps: a4ac67918d0b5ba5f6b9893ac80487e357779e6c
+  Kingfisher: 3ac09acad75a25ab22f6d7cef3de10d61dd4792d
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 

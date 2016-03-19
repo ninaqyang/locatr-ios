@@ -6,10 +6,12 @@
 //  Copyright © 2016 Nina Yang. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import FBSDKShareKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navController: UINavigationController?
     var loginVC: LoginViewController?
-    var overviewVC: OverviewViewController?
     
     let defaults = NSUserDefaults.standardUserDefaults()
 
@@ -29,12 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //
         }
         
+        // Google maps
+//        GMSServices.provideAPIKey("AIzaSyApwyXm8tT2ByHRT07wcW1EOCGF_BHo7Lg")
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
 
         if defaults.boolForKey("isUserLoggedIn") {
-            self.overviewVC = OverviewViewController(nibName: "OverviewViewController", bundle: nil)
-            self.navController = UINavigationController(rootViewController: overviewVC!)
-            self.window?.rootViewController = self.navController
+            let tabBarController = TabBarController.init()
+            self.window?.rootViewController = tabBarController
         } else {
             self.loginVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
             self.window?.rootViewController = self.loginVC

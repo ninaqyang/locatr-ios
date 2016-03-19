@@ -7,9 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2784EC341C8F906D009C1604 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784EC331C8F906D009C1604 /* CustomNavBar.swift */; };
+		275E06931C97491D00310050 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E06921C97491D00310050 /* ProfileViewController.swift */; };
+		275E06951C97494D00310050 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 275E06941C97494D00310050 /* ProfileViewController.xib */; };
+		2773E3E41C9B6FFF00EFD5A4 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2773E3E31C9B6FFF00EFD5A4 /* UserCell.xib */; };
+		27845BF31C95131A00F39C4A /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27845BF21C95131A00F39C4A /* EventDetailsViewController.swift */; };
+		27845BF71C95167100F39C4A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27845BF61C95167100F39C4A /* Event.swift */; };
+		27845BFB1C9517C900F39C4A /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27845BFA1C9517C900F39C4A /* EventCell.xib */; };
+		2784EC341C8F906D009C1604 /* CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784EC331C8F906D009C1604 /* CustomExtensions.swift */; };
+		2784EC361C90BBE3009C1604 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784EC351C90BBE2009C1604 /* EventsViewController.swift */; };
+		2784EC381C90BBEF009C1604 /* EventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2784EC371C90BBEF009C1604 /* EventsViewController.xib */; };
+		2784EC3A1C90D005009C1604 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784EC391C90D005009C1604 /* TabBarController.swift */; };
 		279C67411C8BC1330058EDFD /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C67401C8BC1330058EDFD /* OverviewViewController.swift */; };
 		279C67441C8BC1740058EDFD /* OverviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279C67431C8BC1740058EDFD /* OverviewViewController.xib */; };
+		27C3367B1C99198400E085F6 /* EventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C3367A1C99198400E085F6 /* EventDetailsViewController.xib */; };
+		27C3367D1C9B254800E085F6 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3367C1C9B254800E085F6 /* AddEventViewController.swift */; };
+		27C3367F1C9B259000E085F6 /* AddEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C3367E1C9B259000E085F6 /* AddEventViewController.xib */; };
+		27C938D51C988C7C008371B6 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C938D41C988C7C008371B6 /* UserLocation.swift */; };
+		27C938D71C988DB2008371B6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C938D61C988DB2008371B6 /* LocationManager.swift */; };
 		27CAE6E51C87A5B800C66B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */; };
 		27CAE6E71C87A5B800C66B60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */; };
 		27CAE6EC1C87A5B800C66B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE6EB1C87A5B800C66B60 /* Assets.xcassets */; };
@@ -47,9 +61,23 @@
 
 /* Begin PBXFileReference section */
 		23D6593226ED11C2EA795496 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		2784EC331C8F906D009C1604 /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
+		275E06921C97491D00310050 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		275E06941C97494D00310050 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		2773E3E31C9B6FFF00EFD5A4 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		27845BF21C95131A00F39C4A /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		27845BF61C95167100F39C4A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		27845BFA1C9517C900F39C4A /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		2784EC331C8F906D009C1604 /* CustomExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomExtensions.swift; sourceTree = "<group>"; };
+		2784EC351C90BBE2009C1604 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		2784EC371C90BBEF009C1604 /* EventsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsViewController.xib; sourceTree = "<group>"; };
+		2784EC391C90D005009C1604 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		279C67401C8BC1330058EDFD /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		279C67431C8BC1740058EDFD /* OverviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverviewViewController.xib; sourceTree = "<group>"; };
+		27C3367A1C99198400E085F6 /* EventDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailsViewController.xib; sourceTree = "<group>"; };
+		27C3367C1C9B254800E085F6 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		27C3367E1C9B259000E085F6 /* AddEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEventViewController.xib; sourceTree = "<group>"; };
+		27C938D41C988C7C008371B6 /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
+		27C938D61C988DB2008371B6 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		27CAE6E11C87A5B800C66B60 /* LocatrSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocatrSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +138,12 @@
 			isa = PBXGroup;
 			children = (
 				27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */,
+				2784EC391C90D005009C1604 /* TabBarController.swift */,
 				279C67401C8BC1330058EDFD /* OverviewViewController.swift */,
+				2784EC351C90BBE2009C1604 /* EventsViewController.swift */,
+				27845BF21C95131A00F39C4A /* EventDetailsViewController.swift */,
+				275E06921C97491D00310050 /* ProfileViewController.swift */,
+				27C3367C1C9B254800E085F6 /* AddEventViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -118,9 +151,15 @@
 		279C67451C8BC17D0058EDFD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				27CAE7141C87C23B00C66B60 /* LaunchScreen.xib */,
 				27CAE7161C87D47B00C66B60 /* LoginViewController.xib */,
 				279C67431C8BC1740058EDFD /* OverviewViewController.xib */,
-				27CAE7141C87C23B00C66B60 /* LaunchScreen.xib */,
+				2784EC371C90BBEF009C1604 /* EventsViewController.xib */,
+				27845BFA1C9517C900F39C4A /* EventCell.xib */,
+				27C3367A1C99198400E085F6 /* EventDetailsViewController.xib */,
+				2773E3E31C9B6FFF00EFD5A4 /* UserCell.xib */,
+				275E06941C97494D00310050 /* ProfileViewController.xib */,
+				27C3367E1C9B259000E085F6 /* AddEventViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -146,7 +185,7 @@
 		279C67481C8BC2680058EDFD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2784EC331C8F906D009C1604 /* CustomNavBar.swift */,
+				2784EC331C8F906D009C1604 /* CustomExtensions.swift */,
 				27CAE7231C88BD7700C66B60 /* CustomColors.swift */,
 				27CAE6EB1C87A5B800C66B60 /* Assets.xcassets */,
 				27CAE6F01C87A5B800C66B60 /* Info.plist */,
@@ -180,8 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				279C67471C8BC1FA0058EDFD /* Application */,
-				ED18526A1C8A83830066DA1E /* Models */,
 				ED1852671C8A7C570066DA1E /* Services */,
+				ED18526A1C8A83830066DA1E /* Models */,
 				279C67421C8BC1480058EDFD /* View Controllers */,
 				279C67451C8BC17D0058EDFD /* Views */,
 				279C67481C8BC2680058EDFD /* Resources */,
@@ -253,6 +292,9 @@
 			isa = PBXGroup;
 			children = (
 				ED18526B1C8A83900066DA1E /* User.swift */,
+				27C938D41C988C7C008371B6 /* UserLocation.swift */,
+				27845BF61C95167100F39C4A /* Event.swift */,
+				27C938D61C988DB2008371B6 /* LocationManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -368,14 +410,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				27CAE7201C87D98700C66B60 /* Calibri Italic.ttf in Resources */,
+				27845BFB1C9517C900F39C4A /* EventCell.xib in Resources */,
+				2784EC381C90BBEF009C1604 /* EventsViewController.xib in Resources */,
+				27C3367B1C99198400E085F6 /* EventDetailsViewController.xib in Resources */,
 				27CAE71E1C87D98200C66B60 /* Calibri Bold Italic.ttf in Resources */,
 				27CAE7221C87D98C00C66B60 /* Fabrica.otf in Resources */,
 				27CAE7171C87D47B00C66B60 /* LoginViewController.xib in Resources */,
+				275E06951C97494D00310050 /* ProfileViewController.xib in Resources */,
 				27CAE7151C87C23B00C66B60 /* LaunchScreen.xib in Resources */,
 				27CAE7211C87D98900C66B60 /* Calibri.ttf in Resources */,
 				27CAE6EC1C87A5B800C66B60 /* Assets.xcassets in Resources */,
 				27CAE71F1C87D98400C66B60 /* Calibri Bold.ttf in Resources */,
 				279C67441C8BC1740058EDFD /* OverviewViewController.xib in Resources */,
+				27C3367F1C9B259000E085F6 /* AddEventViewController.xib in Resources */,
+				2773E3E41C9B6FFF00EFD5A4 /* UserCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,12 +497,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				27CAE7241C88BD7800C66B60 /* CustomColors.swift in Sources */,
+				27C3367D1C9B254800E085F6 /* AddEventViewController.swift in Sources */,
+				2784EC361C90BBE3009C1604 /* EventsViewController.swift in Sources */,
+				2784EC3A1C90D005009C1604 /* TabBarController.swift in Sources */,
 				ED1852691C8A7CA40066DA1E /* UserService.swift in Sources */,
+				27C938D51C988C7C008371B6 /* UserLocation.swift in Sources */,
 				27CAE6E71C87A5B800C66B60 /* LoginViewController.swift in Sources */,
 				ED18526C1C8A83900066DA1E /* User.swift in Sources */,
 				27CAE6E51C87A5B800C66B60 /* AppDelegate.swift in Sources */,
 				279C67411C8BC1330058EDFD /* OverviewViewController.swift in Sources */,
-				2784EC341C8F906D009C1604 /* CustomNavBar.swift in Sources */,
+				27845BF31C95131A00F39C4A /* EventDetailsViewController.swift in Sources */,
+				27C938D71C988DB2008371B6 /* LocationManager.swift in Sources */,
+				275E06931C97491D00310050 /* ProfileViewController.swift in Sources */,
+				2784EC341C8F906D009C1604 /* CustomExtensions.swift in Sources */,
+				27845BF71C95167100F39C4A /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
