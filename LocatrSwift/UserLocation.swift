@@ -16,11 +16,11 @@ class UserLocation: Mappable {
     var latitude: String?
     var longitude: String?
     
-    //    init(email: String, name: String, password: String) {
-    //        self.email = email
-    //        self.name = name
-    //        self.password = password
-    //    }
+//    init(email: String, name: String, password: String) {
+//        self.email = email
+//        self.name = name
+//        self.password = password
+//    }
     
     required init?(_ map: Map) {
         mapping(map)

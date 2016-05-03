@@ -39,8 +39,7 @@ class EventCell: UICollectionViewCell {
 class EventsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let customColors: CustomColors = CustomColors.init()
-    let cellID = "eventCell"
-//    let eventDetailsVC: EventDetailsViewController?
+    let eventCellID = "eventCell"
  
     // Filler placeholders
     let event1 = Event.init(iconType: "foodIcon", title: "Sharon's Birthday", location: "Sweet and Vicious", time: "7:00PM")
@@ -75,7 +74,7 @@ class EventsViewController: UIViewController, UICollectionViewDataSource, UIColl
     // MARK: - Styling
     
     func navBarItems() {
-        let profileItem = UIBarButtonItem.init(image: UIImage(imageLiteral: "profile"), style: .Plain, target: self, action: Selector("profilePage"))
+        let profileItem = UIBarButtonItem.init(image: UIImage(imageLiteral: "profile"), style: .Plain, target: self, action: #selector(EventsViewController.profilePage))
         self.navigationItem.rightBarButtonItem = profileItem
     }
     
@@ -91,7 +90,7 @@ class EventsViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.collectionView.backgroundColor = self.customColors.backgroundGrey
         
         let nib = UINib(nibName: "EventCell", bundle: nil)
-        self.collectionView.registerNib(nib, forCellWithReuseIdentifier: cellID)
+        self.collectionView.registerNib(nib, forCellWithReuseIdentifier: eventCellID)
         
         let flowLayout = UICollectionViewFlowLayout.init()
         flowLayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
@@ -113,7 +112,7 @@ class EventsViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! EventCell
+        let cell = self.collectionView.dequeueReusableCellWithReuseIdentifier(eventCellID, forIndexPath: indexPath) as! EventCell
         
         let event = self.eventList[indexPath.row] as Event
         if let iconType = event.iconType {

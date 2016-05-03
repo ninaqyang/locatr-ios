@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272EED651C9E061400C04FD1 /* YelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272EED641C9E061400C04FD1 /* YelpService.swift */; };
 		275E06931C97491D00310050 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E06921C97491D00310050 /* ProfileViewController.swift */; };
 		275E06951C97494D00310050 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 275E06941C97494D00310050 /* ProfileViewController.xib */; };
 		2773E3E41C9B6FFF00EFD5A4 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2773E3E31C9B6FFF00EFD5A4 /* UserCell.xib */; };
@@ -23,7 +24,7 @@
 		27C3367D1C9B254800E085F6 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3367C1C9B254800E085F6 /* AddEventViewController.swift */; };
 		27C3367F1C9B259000E085F6 /* AddEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C3367E1C9B259000E085F6 /* AddEventViewController.xib */; };
 		27C938D51C988C7C008371B6 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C938D41C988C7C008371B6 /* UserLocation.swift */; };
-		27C938D71C988DB2008371B6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C938D61C988DB2008371B6 /* LocationManager.swift */; };
+		27C938D71C988DB2008371B6 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C938D61C988DB2008371B6 /* LocationService.swift */; };
 		27CAE6E51C87A5B800C66B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */; };
 		27CAE6E71C87A5B800C66B60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */; };
 		27CAE6EC1C87A5B800C66B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE6EB1C87A5B800C66B60 /* Assets.xcassets */; };
@@ -37,6 +38,8 @@
 		27CAE7211C87D98900C66B60 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE71B1C87D6F200C66B60 /* Calibri.ttf */; };
 		27CAE7221C87D98C00C66B60 /* Fabrica.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27CAE71D1C87D72F00C66B60 /* Fabrica.otf */; };
 		27CAE7241C88BD7800C66B60 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAE7231C88BD7700C66B60 /* CustomColors.swift */; };
+		27D8591D1CA0D88A00FA5CB2 /* InviteUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D8591C1CA0D88A00FA5CB2 /* InviteUserCell.xib */; };
+		27DCF0301CA3011600150378 /* YelpLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DCF02F1CA3011600150378 /* YelpLocation.swift */; };
 		AF7B895ACA05AE613F3BEB09 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08FB27FB2CF6F341ABB77BA /* Pods.framework */; };
 		ED1852691C8A7CA40066DA1E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1852681C8A7CA40066DA1E /* UserService.swift */; };
 		ED18526C1C8A83900066DA1E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18526B1C8A83900066DA1E /* User.swift */; };
@@ -61,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		23D6593226ED11C2EA795496 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		272EED641C9E061400C04FD1 /* YelpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpService.swift; sourceTree = "<group>"; };
 		275E06921C97491D00310050 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		275E06941C97494D00310050 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		2773E3E31C9B6FFF00EFD5A4 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
@@ -77,7 +81,7 @@
 		27C3367C1C9B254800E085F6 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		27C3367E1C9B259000E085F6 /* AddEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEventViewController.xib; sourceTree = "<group>"; };
 		27C938D41C988C7C008371B6 /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
-		27C938D61C988DB2008371B6 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		27C938D61C988DB2008371B6 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		27CAE6E11C87A5B800C66B60 /* LocatrSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocatrSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAE6E41C87A5B800C66B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27CAE6E61C87A5B800C66B60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 		27CAE71B1C87D6F200C66B60 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
 		27CAE71D1C87D72F00C66B60 /* Fabrica.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fabrica.otf; sourceTree = "<group>"; };
 		27CAE7231C88BD7700C66B60 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		27D8591C1CA0D88A00FA5CB2 /* InviteUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteUserCell.xib; sourceTree = "<group>"; };
+		27DCF02F1CA3011600150378 /* YelpLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpLocation.swift; sourceTree = "<group>"; };
 		27EF2B6A1C8BCB2700534589 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		B08FB27FB2CF6F341ABB77BA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2379D2BBDCC93C6827DCFA8 /* Pods_LocatrSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocatrSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +166,7 @@
 				2773E3E31C9B6FFF00EFD5A4 /* UserCell.xib */,
 				275E06941C97494D00310050 /* ProfileViewController.xib */,
 				27C3367E1C9B259000E085F6 /* AddEventViewController.xib */,
+				27D8591C1CA0D88A00FA5CB2 /* InviteUserCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -284,6 +291,8 @@
 			isa = PBXGroup;
 			children = (
 				ED1852681C8A7CA40066DA1E /* UserService.swift */,
+				27C938D61C988DB2008371B6 /* LocationService.swift */,
+				272EED641C9E061400C04FD1 /* YelpService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -293,8 +302,8 @@
 			children = (
 				ED18526B1C8A83900066DA1E /* User.swift */,
 				27C938D41C988C7C008371B6 /* UserLocation.swift */,
+				27DCF02F1CA3011600150378 /* YelpLocation.swift */,
 				27845BF61C95167100F39C4A /* Event.swift */,
-				27C938D61C988DB2008371B6 /* LocationManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -410,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27CAE7201C87D98700C66B60 /* Calibri Italic.ttf in Resources */,
+				27D8591D1CA0D88A00FA5CB2 /* InviteUserCell.xib in Resources */,
 				27845BFB1C9517C900F39C4A /* EventCell.xib in Resources */,
 				2784EC381C90BBEF009C1604 /* EventsViewController.xib in Resources */,
 				27C3367B1C99198400E085F6 /* EventDetailsViewController.xib in Resources */,
@@ -503,11 +513,13 @@
 				ED1852691C8A7CA40066DA1E /* UserService.swift in Sources */,
 				27C938D51C988C7C008371B6 /* UserLocation.swift in Sources */,
 				27CAE6E71C87A5B800C66B60 /* LoginViewController.swift in Sources */,
+				272EED651C9E061400C04FD1 /* YelpService.swift in Sources */,
 				ED18526C1C8A83900066DA1E /* User.swift in Sources */,
 				27CAE6E51C87A5B800C66B60 /* AppDelegate.swift in Sources */,
 				279C67411C8BC1330058EDFD /* OverviewViewController.swift in Sources */,
+				27DCF0301CA3011600150378 /* YelpLocation.swift in Sources */,
 				27845BF31C95131A00F39C4A /* EventDetailsViewController.swift in Sources */,
-				27C938D71C988DB2008371B6 /* LocationManager.swift in Sources */,
+				27C938D71C988DB2008371B6 /* LocationService.swift in Sources */,
 				275E06931C97491D00310050 /* ProfileViewController.swift in Sources */,
 				2784EC341C8F906D009C1604 /* CustomExtensions.swift in Sources */,
 				27845BF71C95167100F39C4A /* Event.swift in Sources */,

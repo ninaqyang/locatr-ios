@@ -9,23 +9,24 @@
 import Foundation
 import CoreLocation
 
-protocol LocationManagerDelegate: class {
+protocol LocationServiceDelegate: class {
     // required 
     
     //optional
     func locationDenied()
 }
 
-extension LocationManagerDelegate {
+extension LocationServiceDelegate {
     func locationDenied() {
     }
 }
 
-class LocationManager: NSObject, CLLocationManagerDelegate {
-    static let sharedInstance = LocationManager()
+class LocationService: NSObject, CLLocationManagerDelegate {
+    static let sharedInstance = LocationService()
     
-    weak var delegate: LocationManagerDelegate?
+    weak var delegate: LocationServiceDelegate?
     var locationManager: CLLocationManager = CLLocationManager.init()
+//    var currentLocation: CLLocation?
     
     override init() {
         super.init()
@@ -37,6 +38,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     // MARK: - Location Manager Delgate
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Stop updating locations")
         self.locationManager.stopUpdatingLocation()
         if error == true {
             print("Error: \(error)")
@@ -46,7 +48,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = self.locationManager.location {
-            print("Updating locations")
             let longitude = location.coordinate.longitude
             let latitude = location.coordinate.latitude
             print("Latitude: \(latitude), Longitude: \(longitude)")
@@ -86,5 +87,5 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         print("Stop updating location")
         self.locationManager.stopUpdatingLocation()
     }
-
+    
 }

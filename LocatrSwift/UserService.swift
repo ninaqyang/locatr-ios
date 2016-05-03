@@ -53,11 +53,13 @@ class UserService {
                 self.httpStatusCode(statusCode)
                 
                 // Update UI
-                guard let delegate = self.delegate else {
-                    print("Delegate nil")
-                    return
-                }
-                delegate.signupComplete()
+                dispatch_async(dispatch_get_main_queue(),{
+                    guard let delegate = self.delegate else {
+                        print("Delegate nil")
+                        return
+                    }
+                    delegate.signupComplete()
+                })
         }
     }
     
@@ -72,7 +74,7 @@ class UserService {
         if status == "200" {
             self.defaults.setBool(true, forKey: "Success")
         } else {
-            print("Status code isn't 200")
+            print("Status code error: \(status)")
         }
     }
 }

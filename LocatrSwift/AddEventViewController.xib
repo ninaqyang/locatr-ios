@@ -9,18 +9,23 @@
             <string>Calibri</string>
             <string>Calibri</string>
             <string>Calibri</string>
+            <string>Calibri</string>
+            <string>Calibri</string>
+            <string>Calibri</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddEventViewController" customModule="LocatrSwift" customModuleProvider="target">
             <connections>
-                <outlet property="addressLabel" destination="sjv-hp-IAj" id="Qx0-zq-COv"/>
-                <outlet property="eventAddressSearch" destination="Ded-jL-Mxw" id="9IN-hX-KNh"/>
-                <outlet property="eventDate" destination="f9D-uO-FWK" id="NMW-1u-UTI"/>
-                <outlet property="eventInviteSearch" destination="gHa-wD-xpo" id="yIj-C5-2RR"/>
-                <outlet property="eventTime" destination="vXi-mS-gWD" id="fEU-sg-MLh"/>
-                <outlet property="eventTitle" destination="4Mb-aF-pTc" id="oIb-KS-ESH"/>
+                <outlet property="end" destination="hYD-y6-ujG" id="OZ3-Wv-sRF"/>
+                <outlet property="inviteUserSearch" destination="gHa-wD-xpo" id="e97-cf-C8N"/>
+                <outlet property="inviteUserTableView" destination="eEz-Ib-fv3" id="xLT-zU-PON"/>
                 <outlet property="invitedLabel" destination="jP2-5E-xb2" id="9nd-Uf-Btu"/>
+                <outlet property="locationLabel" destination="sjv-hp-IAj" id="Cs2-k0-Jul"/>
+                <outlet property="locationSearch" destination="Ded-jL-Mxw" id="dI7-qf-HxC"/>
+                <outlet property="locationTableView" destination="GoZ-I2-0cX" id="9mh-oQ-scw"/>
+                <outlet property="name" destination="4Mb-aF-pTc" id="Ffw-26-cRI"/>
+                <outlet property="start" destination="f9D-uO-FWK" id="ix9-6m-HB0"/>
                 <outlet property="view" destination="iN0-l3-epB" id="uSc-q3-Veb"/>
             </connections>
         </placeholder>
@@ -29,35 +34,52 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9D-uO-FWK">
-                    <rect key="frame" x="40" y="149" width="225" height="30"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <textInputTraits key="textInputTraits"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9D-uO-FWK">
+                    <rect key="frame" x="40" y="149" width="520" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3DZ-jx-IsB"/>
+                        <constraint firstAttribute="width" constant="225" id="g1s-vf-afd"/>
+                        <constraint firstAttribute="width" constant="520" id="gly-eF-JYg"/>
+                    </constraints>
+                    <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="g1s-vf-afd"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="textfieldWhen:" destination="-1" eventType="editingDidBegin" id="cf0-jK-jcF"/>
+                    </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXi-mS-gWD">
-                    <rect key="frame" x="335" y="149" width="225" height="30"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Mb-aF-pTc">
-                    <rect key="frame" x="40" y="25" width="520" height="30"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ded-jL-Mxw">
-                    <rect key="frame" x="67" y="80" width="493" height="44"/>
+                <searchBar contentMode="redraw" restorationIdentifier="address" translatesAutoresizingMaskIntoConstraints="NO" id="Ded-jL-Mxw">
+                    <rect key="frame" x="73" y="80" width="487" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="487" id="D9e-IJ-aGp"/>
+                        <constraint firstAttribute="width" constant="486" id="OZ2-wL-ntg"/>
+                        <constraint firstAttribute="width" constant="493" id="rha-D8-JEN"/>
+                        <constraint firstAttribute="height" constant="44" id="rxo-4P-qDW"/>
+                    </constraints>
                     <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="OZ2-wL-ntg"/>
+                            <exclude reference="rha-D8-JEN"/>
+                        </mask>
+                    </variation>
                 </searchBar>
-                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gHa-wD-xpo">
-                    <rect key="frame" x="60" y="206" width="500" height="44"/>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gHa-wD-xpo">
+                    <rect key="frame" x="60" y="264" width="500" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="J7Q-6f-2QF"/>
+                        <constraint firstAttribute="width" constant="500" id="bMd-NO-yt9"/>
+                    </constraints>
                     <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                 </searchBar>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHh-LG-hze">
                     <rect key="frame" x="40" y="29" width="52" height="21"/>
@@ -65,14 +87,8 @@
                     <color key="textColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyt-ky-iFf">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyt-ky-iFf">
                     <rect key="frame" x="40" y="153" width="52" height="21"/>
-                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
-                    <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PK2-Kf-keS">
-                    <rect key="frame" x="335" y="153" width="52" height="21"/>
                     <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
                     <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -80,18 +96,18 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjv-hp-IAj">
                     <rect key="frame" x="40" y="95" width="67" height="32"/>
                     <attributedString key="attributedText">
-                        <fragment content="Address:">
+                        <fragment content="Location:">
                             <attributes>
                                 <color key="NSColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 <font key="NSFont" size="17" name="Calibri"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" maximumLineHeight="1" tighteningFactorForTruncation="0.0"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" maximumLineHeight="1" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP2-5E-xb2">
-                    <rect key="frame" x="40" y="221" width="52" height="32"/>
+                    <rect key="frame" x="40" y="279" width="52" height="32"/>
                     <attributedString key="attributedText">
                         <fragment content="Invited:">
                             <attributes>
@@ -103,8 +119,105 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Mb-aF-pTc">
+                    <rect key="frame" x="40" y="25" width="520" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="520" id="7Yo-Vi-LV3"/>
+                        <constraint firstAttribute="height" constant="30" id="bvg-jF-10U"/>
+                    </constraints>
+                    <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZZ-Jr-f2P">
+                    <rect key="frame" x="560" y="264" width="40" height="44"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="6Lm-9r-y1H"/>
+                        <constraint firstAttribute="height" constant="44" id="6Oo-Aa-cD4"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahD-BK-7zs">
+                    <rect key="frame" x="560" y="80" width="40" height="44"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="IKT-Aj-Azh"/>
+                        <constraint firstAttribute="width" constant="40" id="ezl-6j-wvX"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eEz-Ib-fv3">
+                    <rect key="frame" x="40" y="308" width="520" height="292"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYD-y6-ujG">
+                    <rect key="frame" x="40" y="209" width="520" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="520" id="IAW-kZ-7J7"/>
+                        <constraint firstAttribute="height" constant="30" id="NhW-19-UJ5"/>
+                        <constraint firstAttribute="width" constant="225" id="zaX-gq-nKO"/>
+                    </constraints>
+                    <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="zaX-gq-nKO"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="textfieldWhen:" destination="-1" eventType="editingDidBegin" id="UR6-U2-ryI"/>
+                        <action selector="textfieldWhen:" destination="-1" eventType="editingDidEnd" id="efs-MU-iBP"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZx-iQ-emp">
+                    <rect key="frame" x="40" y="213" width="52" height="21"/>
+                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
+                    <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GoZ-I2-0cX">
+                    <rect key="frame" x="40" y="124" width="520" height="476"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ded-jL-Mxw" secondAttribute="trailing" constant="40" id="01J-WB-Yli"/>
+                <constraint firstItem="f9D-uO-FWK" firstAttribute="top" secondItem="Ded-jL-Mxw" secondAttribute="bottom" constant="25" id="55z-V2-L9g"/>
+                <constraint firstItem="uZZ-Jr-f2P" firstAttribute="top" secondItem="ahD-BK-7zs" secondAttribute="bottom" constant="80" id="968-w8-4q0"/>
+                <constraint firstItem="uZZ-Jr-f2P" firstAttribute="top" secondItem="ahD-BK-7zs" secondAttribute="bottom" constant="140" id="9H1-uZ-dLy"/>
+                <constraint firstAttribute="trailing" secondItem="4Mb-aF-pTc" secondAttribute="trailing" constant="40" id="AUu-jl-Mlp"/>
+                <constraint firstItem="ahD-BK-7zs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="EhK-BS-gg3"/>
+                <constraint firstItem="4Mb-aF-pTc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="Fmf-Ye-P3n"/>
+                <constraint firstItem="hYD-y6-ujG" firstAttribute="top" secondItem="f9D-uO-FWK" secondAttribute="bottom" constant="30" id="G9O-sm-G6n"/>
+                <constraint firstItem="uZZ-Jr-f2P" firstAttribute="leading" secondItem="ahD-BK-7zs" secondAttribute="leading" id="Gkf-yA-cgK"/>
+                <constraint firstAttribute="trailing" secondItem="ahD-BK-7zs" secondAttribute="trailing" id="RQj-AT-MNG"/>
+                <constraint firstItem="gHa-wD-xpo" firstAttribute="top" secondItem="f9D-uO-FWK" secondAttribute="bottom" constant="80" id="Rwu-c3-OFc"/>
+                <constraint firstItem="gHa-wD-xpo" firstAttribute="top" secondItem="hYD-y6-ujG" secondAttribute="bottom" constant="25" id="TMA-jM-BN0"/>
+                <constraint firstItem="Ded-jL-Mxw" firstAttribute="top" secondItem="4Mb-aF-pTc" secondAttribute="bottom" constant="25" id="bL4-jf-3rl"/>
+                <constraint firstItem="4Mb-aF-pTc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="bud-Mw-b0Y"/>
+                <constraint firstItem="4Mb-aF-pTc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="d5g-Ca-DMq"/>
+                <constraint firstItem="hYD-y6-ujG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="feH-vT-bRf"/>
+                <constraint firstAttribute="trailing" secondItem="f9D-uO-FWK" secondAttribute="trailing" constant="40" id="h5f-eT-TfW"/>
+                <constraint firstItem="gHa-wD-xpo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="hr3-AH-Sdy"/>
+                <constraint firstItem="gHa-wD-xpo" firstAttribute="top" secondItem="f9D-uO-FWK" secondAttribute="bottom" constant="30" id="mnd-Zm-a4k"/>
+                <constraint firstAttribute="trailing" secondItem="uZZ-Jr-f2P" secondAttribute="trailing" id="qnC-v4-lUq"/>
+                <constraint firstAttribute="trailing" secondItem="gHa-wD-xpo" secondAttribute="trailing" constant="40" id="t77-xJ-4Ja"/>
+                <constraint firstItem="f9D-uO-FWK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="tG9-Fc-nbP"/>
+                <constraint firstItem="Ded-jL-Mxw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="74" id="xEl-QA-6gt"/>
+                <constraint firstAttribute="trailing" secondItem="hYD-y6-ujG" secondAttribute="trailing" constant="40" id="xGY-nn-nkF"/>
+                <constraint firstItem="Ded-jL-Mxw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="67" id="z5P-Py-wrr"/>
+                <constraint firstItem="Ded-jL-Mxw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="73" id="zQr-nF-pnV"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="xEl-QA-6gt"/>
+                    <exclude reference="z5P-Py-wrr"/>
+                    <exclude reference="Rwu-c3-OFc"/>
+                    <exclude reference="mnd-Zm-a4k"/>
+                    <exclude reference="968-w8-4q0"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

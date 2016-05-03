@@ -19,8 +19,8 @@ class UserCell: UITableViewCell {
 
 class EventDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let customColors: CustomColors = CustomColors.init()
-    let cellID = "userCell"
-   
+    let userCellID = "userCell"
+    
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var iconType: UIImageView!
     @IBOutlet weak var eventTime: UILabel!
@@ -44,6 +44,7 @@ class EventDetailsViewController: UIViewController, UITableViewDataSource, UITab
         self.navBarItems()
         
         self.pageItems()
+        self.tableViewSetup()
     }
     
     func navBarItems() {
@@ -90,6 +91,13 @@ class EventDetailsViewController: UIViewController, UITableViewDataSource, UITab
         self.eventAddress2.textColor = self.customColors.mediumGrey
     }
     
+    func tableViewSetup() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        let nib = UINib(nibName: "UserCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: userCellID)
+    }
+    
     // MARK: - Edit Event
     
     @IBAction func editEvent(sender: AnyObject) {
@@ -107,7 +115,7 @@ class EventDetailsViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! UserCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier(userCellID, forIndexPath: indexPath) as! UserCell
 
         //fill cell with info
         

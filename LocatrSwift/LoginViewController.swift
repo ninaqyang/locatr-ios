@@ -118,6 +118,7 @@ class LoginViewController: UIViewController, UserServiceDelegate {
                 textfieldError()
                 return
         }
+        
         self.user = ["email": userEmail, "name": userName, "password": userPassword]
         print(self.user)
         self.userService.createUser(self.user)

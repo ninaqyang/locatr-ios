@@ -11,7 +11,7 @@ import UIKit
 import FBSDKShareKit
 import FBSDKCoreKit
 import FBSDKLoginKit
-import GoogleMaps
+import OAuthSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -49,7 +49,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        // Facebook
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        // Yelp OAuth
+//        if (url.host == "oauth-callback") {
+//            OAuthSwift.handleOpenURL(url)
+//        }
+//        return true
     }
     
     func applicationWillResignActive(application: UIApplication) {

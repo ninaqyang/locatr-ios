@@ -16,10 +16,10 @@ class CustomAnnotation: NSObject, MKAnnotation {
     }
 }
 
-class OverviewViewController: UIViewController, MKMapViewDelegate, LocationManagerDelegate {
+class OverviewViewController: UIViewController, MKMapViewDelegate, LocationServiceDelegate {
     
     let customColors: CustomColors = CustomColors.init()
-    var locationManager: LocationManager = LocationManager.sharedInstance
+    var locationService: LocationService = LocationService.sharedInstance
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -37,7 +37,7 @@ class OverviewViewController: UIViewController, MKMapViewDelegate, LocationManag
         }
         self.navBarItems()
 
-        self.locationManager.delegate = self
+        self.locationService.delegate = self
         
         self.mapView.delegate = self
         self.mapView.showsUserLocation = true

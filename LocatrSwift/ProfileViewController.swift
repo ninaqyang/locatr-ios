@@ -15,10 +15,10 @@ enum LocationSwitch {
     case LaterLoads
 }
 
-class ProfileViewController: UIViewController, LocationManagerDelegate {
+class ProfileViewController: UIViewController, LocationServiceDelegate {
     
     let customColors: CustomColors = CustomColors.init()
-    var locationManager: LocationManager = LocationManager.sharedInstance
+    var locationService: LocationService = LocationService.sharedInstance
     let defaults = NSUserDefaults.standardUserDefaults()
     var locationSwtichLoad: LocationSwitch?
 
@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController, LocationManagerDelegate {
         self.navBarItems()
         self.pageItems()
         
-        self.locationManager.delegate = self
+        self.locationService.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -97,12 +97,12 @@ class ProfileViewController: UIViewController, LocationManagerDelegate {
             self.currentLocation.fadeTransition(0.4)
             self.currentLocation.text = "Current Location ON"
             defaults.setBool(self.locationSwitch.on, forKey: "locationOn")
-            self.locationManager.locationOn()
+            self.locationService.locationOn()
         } else {
             self.currentLocation.fadeTransition(0.4)
             self.currentLocation.text = "Current Location OFF"
             defaults.setBool(false, forKey: "locationOn")
-            self.locationManager.locationOff()
+            self.locationService.locationOff()
         }
     }
 

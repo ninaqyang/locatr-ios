@@ -1,23 +1,24 @@
 PODS:
-  - Alamofire (3.2.1)
+  - Alamofire (3.3.1)
   - AlamofireObjectMapper (2.1.2):
     - Alamofire (~> 3.2)
     - ObjectMapper (~> 1.0)
-  - Bolts (1.6.0):
-    - Bolts/AppLinks (= 1.6.0)
-    - Bolts/Tasks (= 1.6.0)
-  - Bolts/AppLinks (1.6.0):
+  - Bolts (1.7.0):
+    - Bolts/AppLinks (= 1.7.0)
+    - Bolts/Tasks (= 1.7.0)
+  - Bolts/AppLinks (1.7.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.6.0)
-  - FBSDKCoreKit (4.10.0):
-    - Bolts (~> 1.5)
-  - FBSDKLoginKit (4.10.0):
+  - Bolts/Tasks (1.7.0)
+  - FBSDKCoreKit (4.11.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.11.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.10.0):
+  - FBSDKShareKit (4.11.0):
     - FBSDKCoreKit
-  - GoogleMaps (1.12.3)
-  - Kingfisher (2.1.0)
-  - ObjectMapper (1.1.5)
+  - GoogleMaps (1.13.1)
+  - Kingfisher (2.3.1)
+  - OAuthSwift (0.5.2)
+  - ObjectMapper (1.2.0)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
@@ -28,7 +29,8 @@ DEPENDENCIES:
   - FBSDKShareKit (~> 4.10)
   - GoogleMaps
   - Kingfisher (~> 2.0)
-  - ObjectMapper (~> 1.1)
+  - OAuthSwift (~> 0.5.0)
+  - ObjectMapper (~> 1.2)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
 EXTERNAL SOURCES:
@@ -37,19 +39,20 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftyJSON:
-    :commit: 42bdb102d2624b143c07850ebdc1537d5b6579b6
+    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   AlamofireObjectMapper: 82391c31f23e37bdb2660da174bcf81b202da39d
-  Bolts: f52a250053bb517ca874523c3913776359ab3def
-  FBSDKCoreKit: 13bec8373fb3af94d44daf2aa1e0958687897fbd
-  FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
-  FBSDKShareKit: 54587b4624706ace1e810cf83412a918141f807a
-  GoogleMaps: a4ac67918d0b5ba5f6b9893ac80487e357779e6c
-  Kingfisher: 3ac09acad75a25ab22f6d7cef3de10d61dd4792d
-  ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  FBSDKCoreKit: 686ac982723a14ec9ddb85e2f81235d7706c891b
+  FBSDKLoginKit: bade9fc78277764149ccc5bfaadbf13c83175c6a
+  FBSDKShareKit: 2d1746144cfc8a9dbbd24997c34ee0471be51b6a
+  GoogleMaps: 8935220056a6cc8e9ca298b4da4ae530620aa71b
+  Kingfisher: 6d3fbada4829cbc7b89e883e8218c28afeb64e42
+  OAuthSwift: 1ef042d4362e755e24a78f158d817245641a5d24
+  ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0

@@ -9,21 +9,30 @@
 import Foundation
 import UIKit
 
-class AddEventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate {
+class InviteUserCell: UITableViewCell {
     let customColors: CustomColors = CustomColors.init()
-    let cellID = "userCell"
-
-    @IBOutlet weak var eventTime: UITextField!
-    @IBOutlet weak var eventDate: UITextField!
-    @IBOutlet weak var eventTitle: UITextField!
-    @IBOutlet weak var invitedLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var addressTableView: UITableView!
-    @IBOutlet weak var inviteTableView: UITableView!
-    @IBOutlet weak var eventInviteSearch: UISearchBar!
-    @IBOutlet weak var eventAddressSearch: UISearchBar!
     
-    var addressSearch: UISearchController!
+    override func awakeFromNib() {
+        //change background stuff
+    }
+}
+
+class AddEventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate, UITextFieldDelegate {
+    let customColors: CustomColors = CustomColors.init()
+    var locationService: LocationService = LocationService.sharedInstance
+    let yelpService: YelpService = YelpService.init()
+    let inviteUserCellID = "inviteUserCell"
+    let locationCellID = "locationCell"
+
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var invitedLabel: UILabel!
+    @IBOutlet weak var start: UITextField!
+    @IBOutlet weak var end: UITextField!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var locationTableView: UITableView!
+    @IBOutlet weak var inviteUserTableView: UITableView!
+    @IBOutlet weak var inviteUserSearch: UISearchBar!
+    @IBOutlet weak var locationSearch: UISearchBar!
     
     // MARK: - View
    
@@ -34,11 +43,10 @@ class AddEventViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tabBarController?.tabBar.hidden = true
         
         self.pageItems()
-//        self.configureSearchController()
-
-//        self.addressTableView.tag = 1
-//        self.inviteTableView.tag = 2
+        self.tableViewSetup()
         
+        self.locationSearch.delegate = self
+        self.inviteUserSearch.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -52,8 +60,8 @@ class AddEventViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         self.navBarItems()
         
-//        self.addressTableView.hidden = true
-//        self.inviteTableView.hidden = true
+        self.locationTableView.hidden = true
+        self.inviteUserTableView.hidden = true
     }
     
     func navBarItems() {
@@ -91,45 +99,53 @@ class AddEventViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func pageItems() {
         let titlePadding = UIView(frame:CGRect(x:0, y:0, width:50, height:0))
-        self.eventTitle.setUnderline(self.customColors.lightGrey)
-        self.eventTitle.leftViewMode = UITextFieldViewMode.Always
-        self.eventTitle.leftView = titlePadding
+        self.name.setUnderline(self.customColors.lightGrey)
+        self.name.leftViewMode = UITextFieldViewMode.Always
+        self.name.leftView = titlePadding
 
-        let datePadding = UIView(frame:CGRect(x:0, y:0, width:40, height:0))
-        self.eventDate.setUnderline(self.customColors.lightGrey)
-        self.eventDate.leftViewMode = UITextFieldViewMode.Always
-        self.eventDate.leftView = datePadding
+        let startPadding = UIView(frame:CGRect(x:0, y:0, width:43, height:0))
+        self.start.setUnderline(self.customColors.lightGrey)
+        self.start.leftViewMode = UITextFieldViewMode.Always
+        self.start.leftView = startPadding
         
-        let timePadding = UIView(frame:CGRect(x:0, y:0, width:30, height:0))
-        self.eventTime.setUnderline(self.customColors.lightGrey)
-        self.eventTime.leftViewMode = UITextFieldViewMode.Always
-        self.eventTime.leftView = timePadding
+        let endPadding = UIView(frame:CGRect(x:0, y:0, width:35, height:0))
+        self.end.setUnderline(self.customColors.lightGrey)
+        self.end.leftViewMode = UITextFieldViewMode.Always
+        self.end.leftView = endPadding
         
-        self.addressLabel.setUnderline(self.customColors.lightGrey)
-        self.addressLabel.font = UIFont(name: "Calibri", size: 17)
+        self.locationLabel.setUnderline(self.customColors.lightGrey)
+        self.locationLabel.font = UIFont(name: "Calibri", size: 17)
         self.invitedLabel.setUnderline(self.customColors.lightGrey)
         self.invitedLabel.font = UIFont(name: "Calibri", size: 17)
         
-        self.eventAddressSearch.customizeSearchBar(self.eventAddressSearch)
-        self.eventAddressSearch.setUnderline(self.customColors.lightGrey)
-        self.eventInviteSearch.customizeSearchBar(self.eventInviteSearch)
-        self.eventInviteSearch.setUnderline(self.customColors.lightGrey)
+        self.locationSearch.customizeSearchBar(self.locationSearch)
+        self.locationSearch.setUnderline(self.customColors.lightGrey)
+        self.inviteUserSearch.customizeSearchBar(self.inviteUserSearch)
+        self.inviteUserSearch.setUnderline(self.customColors.lightGrey)
+        
+        let addressText = self.locationSearch.valueForKey("searchField") as! UITextField
+        addressText.font = UIFont(name: "Calibri", size: 17)
+        addressText.textColor = self.customColors.darkGrey
+
+        let inviteText = self.inviteUserSearch.valueForKey("searchField") as! UITextField
+        inviteText.font = UIFont(name: "Calibri", size: 17)
+        inviteText.textColor = self.customColors.darkGrey
+    }
+    
+    func tableViewSetup() {
+        self.locationTableView.delegate = self
+        self.locationTableView.dataSource = self
+        self.locationTableView.tag = 1
+        self.inviteUserTableView.delegate = self
+        self.inviteUserTableView.dataSource = self
+        self.inviteUserTableView.tag = 2
+        
+        self.locationTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: locationCellID)
+        self.inviteUserTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: locationCellID)
+
     }
     
     // MARK: - Search Controller
-    
-//    func configureSearchController() {
-//        // Initialize and perform a minimum configuration to the search controller.
-//        self.addressSearch = UISearchController(searchResultsController: nil)
-//        self.addressSearch.searchResultsUpdater = self
-//        self.addressSearch.dimsBackgroundDuringPresentation = false
-//        self.addressSearch.searchBar.placeholder = "Search here..."
-//        self.addressSearch.searchBar.delegate = self
-//        self.addressSearch.searchBar.sizeToFit()
-//        
-//        // Place the search bar view to the tableview headerview.
-////        self.addressTableView.tableHeaderView = self.addressSearch.searchBar
-//    }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
 //        shouldShowSearchResults = true
@@ -143,6 +159,22 @@ class AddEventViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        guard let latitude = self.locationService.locationManager.location?.coordinate.latitude, longitude = self.locationService.locationManager.location?.coordinate.longitude else {
+            // uialert that location is off
+            return
+        }
+        print("Latitude: \(latitude), Longitude: \(longitude)")
+        
+        guard let text = self.locationSearch.text else {
+            print("Need to enter search term")
+            return
+        }
+        print(text, latitude, longitude)
+        self.yelpService.yelpOAuth(text, latitude: latitude, longitude: longitude)
         
     }
     
@@ -161,28 +193,52 @@ class AddEventViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! UserCell
+//        let inviteCell = tableView.dequeueReusableCellWithIdentifier(inviteUserCellID, forIndexPath: indexPath) as! InviteUserCell
+        
+        var locationCell = tableView.dequeueReusableCellWithIdentifier(locationCellID, forIndexPath: indexPath) as? UITableViewCell
+        if locationCell == nil {
+            locationCell = UITableViewCell(style: .Subtitle, reuseIdentifier: locationCellID)
+        }
         
         if tableView.tag == 1 {
-            
+            return locationCell!
+        } else {
+            return locationCell!
         }
         
-        if tableView.tag == 2 {
-            
-        }
-        
-        //fill cell with info
-        
-        return cell
     }
     
     // MARK: - Table View Delegate
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // fill uitextfield with data
+        
 //        self.productsVC.title = self.dao.companyDAOList[indexPath.row].companyName
 //        self.productsVC.products = self.dao.companyDAOList[indexPath.row].products
 //        self.navigationController?.pushViewController(self.productsVC, animated: true)
-//    }
+    }
+    
+    // MARK: - UIPicker View
+    
+    @IBAction func textfieldWhen(sender: UITextField) {
+        let pickerView:UIDatePicker = UIDatePicker()
+        pickerView.datePickerMode = .DateAndTime
+        sender.inputView = pickerView
+        pickerView.addTarget(self, action: Selector("pickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+    }
 
+    func pickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .MediumStyle
+        dateFormatter.timeStyle = .ShortStyle
+        
+        if self.start.isFirstResponder() {
+            self.start.text = dateFormatter.stringFromDate(sender.date)
+        }
+        
+        if self.end.isFirstResponder() {
+            self.end.text = dateFormatter.stringFromDate(sender.date)
+        }
+    }
     
 }
